@@ -3,7 +3,7 @@
 import random
 
 while True:
-    
+
     secret_number = random.randint(1, 100)
     guess = 0
     number_of_attempts = 0
@@ -12,18 +12,23 @@ while True:
 
         guess = int(input("Guess a random number between 1 and 100:"))
 
+        if guess < 1 or guess > 100:
+            print("Invalid number! Enter a number between 1 and 100.")
+            continue
+
         if guess > secret_number:
-            print ("The secret number is smaller.")
+            print("The secret number is smaller.")
         elif guess < secret_number:
-            print ("The secret number is bigger.")
+            print("The secret number is bigger.")
 
         number_of_attempts = number_of_attempts + 1
 
     if guess == secret_number:
-        print ("Good job, you guessed the secret number on your", number_of_attempts, "attempt")
+        print("Good job, you guessed the secret number on your", number_of_attempts, "attempt(s)")
 
-    answer = input("Do you want to play again?")
+    answer = input("Do you want to play again?").strip().lower()
     if answer == "no":
-        print ("Ok.")
+        print("Ok.")
         break
+
     print("=====================")

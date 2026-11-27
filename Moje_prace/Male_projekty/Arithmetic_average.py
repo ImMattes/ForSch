@@ -1,34 +1,36 @@
 grades = []
-grade = ("anything")
 ones_and_twos = []
-Arithmetic_average_0 = 0
+arithmetic_average_0 = 0
 
-print("Enter a grade (1 - 5), or 0 to stop entering.")
+print("Enter a grade (1 - 5), or 0 to stop entering (For grades like 2- please enter 2.5).")
 
 while True:
-    grade = int(input("Enter a grade:"))
-    if grade == 0:
+    grade = float(input("Enter a grade:"))
+    if grade == 0 and grades:
         break
-    if grade < 1 or grade > 5:
-        print("Invalid grade!")
+    elif grade == 0 and not grades:
+        print("You have to enter at least one grade!")
     else:
-        grades.append(grade)
-        if grade == 1 or grade == 2:
-            ones_and_twos.append(grade)
+        if grade not in (1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5):
+            print("Invalid grade!")
+        else:
+            grades.append(grade)
+            if grade in (1, 1.5, 2, 2.5):
+                ones_and_twos.append(grade)
 
 print("Your grades:")
 
-for grade_ in grades:
-    print(grade_)
+for grade in grades:
+    print(grade)
 
 print("Number of valid grades:", len(grades))
 print("Number of ones and twos:", len(ones_and_twos))
 
-for grade__ in grades:
-    Arithmetic_average_0 = Arithmetic_average_0 + grade__
+for grade in grades:
+    arithmetic_average_0 = arithmetic_average_0 + grade
 
-Arithmetic_average = Arithmetic_average_0 / len(grades)
+arithmetic_average = arithmetic_average_0 / len(grades)
 
-print("Arithmetic average of all grades:", Arithmetic_average)
+print("Arithmetic average of all grades:", arithmetic_average)
 
 print("=====================")

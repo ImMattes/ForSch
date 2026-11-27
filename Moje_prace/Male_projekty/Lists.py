@@ -2,7 +2,7 @@ games = ["Minecraft", "Terraria", "Portal", "Subnautica", "Roblox"]
 
 print(games[-1])
 print(games[-2])
-print(games[-0])
+print(games[0])
 
 print("====================")
 
@@ -27,7 +27,7 @@ print("====================")
 
 games_2 = ["Minecraft", "Terraria", "Roblox"]
 
-games_2.append("Subnatica")
+games_2.append("Subnautica")
 games_2.insert(1, "Portal")
 games_2.extend(["GTA V", "The Sims"])
 games_2.remove("Roblox")
